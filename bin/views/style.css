@@ -1,0 +1,53 @@
+.body {
+    -fx-background-color: rgb(23, 23, 23);
+}
+
+/* .gridPane {
+    -fx-background-color: rgb(23, 23, 23);
+} */
+
+.lbl {
+    -fx-background-color: rgb(23, 23, 23);
+}
+
+.txt {
+   -fx-background-color: rgb(33, 33, 35);
+    -fx-text-fill: rgb(227, 227, 227); 
+}
+
+.txt-cuadrante {
+     -fx-background-color:  rgb(23, 23, 23);
+    -fx-text-fill: rgb(33, 148, 233); 
+}
+
+.menu {
+    -fx-text-fill: rgb(227, 227, 227); 
+    -fx-text-decoration: solid;
+}
+
+
+.button {
+    -fx-background-color:  rgb(200, 200, 200);
+    -fx-border-radius: 5px;
+    -fx-text-fill: rgb(35, 35, 35); 
+    
+}
+
+
+.button:hover {
+    -fx-background-color:   rgb(71, 71, 71);
+    -fx-border-radius: 5px;
+    -fx-text-fill: rgb(200, 200, 200); 
+    -fx-effect: dropshadow(three-pass-box, rgb(71, 71, 71), 15, 0.8, 0, 0); 
+}
+
+.button:pressed {
+    -fx-background-color:rgb(100, 100, 100);
+    -fx-border-radius: 5px;
+    -fx-text-fill: rgb(200, 200, 200); 
+    -fx-effect: dropshadow(three-pass-box, rgb(100, 100, 100), 15, 0.8, 0, 0); 
+}
+
+.tabla {
+    -fx-background-color: rgb(41,41,41);
+}
