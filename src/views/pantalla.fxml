@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="tabPanePrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="690.0" styleClass="body" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.pantallaController">
+  <tabs>
+    <Tab fx:id="tabBienvenida" closable="false" text="Bienvenida">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="169.0" layoutY="14.0" text="Bienvenido al chat BorisPonganosCinco :D" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="193.0" fitWidth="209.0" layoutX="251.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../calaveraconpistola.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="149.0" layoutY="272.0" prefHeight="35.0" prefWidth="96.0" text="Usuario" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="169.0" layoutY="333.0" text="Elige el chat" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="cmdAbrirChatPrivado" alignment="CENTER" layoutX="169.0" layoutY="375.0" mnemonicParsing="false" onAction="#irAChatPrivado" prefHeight="46.0" prefWidth="151.0" text="Privado">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cmdAbrirChatGrupal" alignment="CENTER" layoutX="366.0" layoutY="375.0" mnemonicParsing="false" onAction="#irAChatGrupal" prefHeight="46.0" prefWidth="156.0" text="Grupal">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txtIngresarUsuario" layoutX="286.0" layoutY="271.0" prefHeight="37.0" prefWidth="279.0" styleClass="txt">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </TextField>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tabChatPrivado" closable="false" text="Chat Privado">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="97.0" layoutY="342.0" text="Mensaje" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtMensajePrivado" layoutX="204.0" layoutY="339.0" prefHeight="29.0" prefWidth="197.0" styleClass="txt">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtUsuarioPrivado" editable="false" layoutX="500.0" layoutY="7.0" prefHeight="29.0" prefWidth="175.0" styleClass="txt">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="430.0" layoutY="12.0" text="Usuario" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="cmdEnviarMensajePrivado" alignment="CENTER" layoutX="461.0" layoutY="336.0" mnemonicParsing="false" onAction="#enviarMensajePrivado" prefHeight="36.0" prefWidth="117.0" text="Enviar">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cmdCerrarSesion" alignment="CENTER" layoutX="243.0" layoutY="395.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="41.0" prefWidth="158.0" text="Cerrar Sesión">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <TabPane fx:id="tabPaneChats" layoutX="17.0" layoutY="57.0" prefHeight="265.0" prefWidth="660.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Untitled Tab 1">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ListView fx:id="lvChatPrivado" prefHeight="250.0" prefWidth="660.0" />
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="tabChatGrupal" closable="false" text="Chat Grupal">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="429.0" layoutY="13.0" text="Usuario" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtUsuarioGrupal" editable="false" layoutX="500.0" layoutY="10.0" prefHeight="29.0" prefWidth="175.0" styleClass="txt">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtMensajeGrupal" layoutX="157.0" layoutY="335.0" prefHeight="38.0" prefWidth="305.0" styleClass="txt">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="48.0" layoutY="334.0" prefHeight="39.0" prefWidth="94.0" text="Mensaje" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="cmdEnviarMensajeGrupal" alignment="CENTER" layoutX="495.0" layoutY="335.0" mnemonicParsing="false" onAction="#enviarMensajeGrupal" prefHeight="37.0" prefWidth="103.0" text="Enviar">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cmdCerrarSesion" alignment="CENTER" layoutX="249.0" layoutY="399.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="38.0" prefWidth="152.0" text="Cerrar Sesión">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <ListView fx:id="lvChatGrupal" layoutX="15.0" layoutY="73.0" prefHeight="245.0" prefWidth="660.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

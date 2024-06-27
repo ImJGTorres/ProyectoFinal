@@ -8,7 +8,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 
-public class main extends Application {
+public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -18,7 +18,7 @@ public class main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		try {
             // Cargar el archivo FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("prototipo2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("pantalla.fxml"));
             Parent root = loader.load();
             // Crear la escena con el contenido cargado
             Scene scene = new Scene(root);
