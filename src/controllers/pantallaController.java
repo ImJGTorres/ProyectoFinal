@@ -13,11 +13,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.TextAlignment;
 
 public class pantallaController {
 
@@ -180,11 +182,16 @@ public class pantallaController {
     }
     
     void agregarChats(String usuario) {
-    	Tab nueva = new Tab("Chat con " + usuario);
+    	Tab nueva = new Tab();
+    	Label label = new Label("Chat con " + usuario);
+        label.getStyleClass().add("tab-label"); 
+        label.setWrapText(true);
+        label.setTextAlignment(TextAlignment.CENTER);
+        nueva.setGraphic(label);
     	AnchorPane contenido = new AnchorPane();
     	ListView<String> lv = new ListView<>();
     	lv.setId(usuario);
-    	lv.setPrefSize(660, 250);
+    	lv.setPrefSize(535, 327);
     	contenido.getChildren().add(lv);
     	nueva.setContent(contenido);
     	this.tabPaneChats.getTabs().add(nueva);
