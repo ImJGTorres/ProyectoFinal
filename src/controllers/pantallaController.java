@@ -92,13 +92,14 @@ public class pantallaController {
 
     @FXML
     void cerrarSesion(ActionEvent event) {
-    	tabBienvenida.setDisable(false);
-    	tabChatPrivado.setDisable(true);
-    	tabChatGrupal.setDisable(true);
+//    	tabBienvenida.setDisable(false);
+//    	tabChatPrivado.setDisable(true);
+//    	tabChatGrupal.setDisable(true);
     	tabPanePrincipal.getSelectionModel().select(tabBienvenida);   
     	usuariosActivos.remove(txtUsuarioPrivado.getText());
     	usuariosInactivos.add(txtUsuarioPrivado.getText());
     	cerrarTabs(tabPaneChats);
+    	txtIngresarUsuario.clear();
     }
     
     void cerrarTabs(TabPane panel) {
@@ -107,8 +108,13 @@ public class pantallaController {
     }
     @FXML
     void enviarMensajeGrupal(ActionEvent event) {
-    	listaMensajesGrupales.add(txtUsuarioGrupal.getText() + obtenerHora() + ": " + txtMensajeGrupal.getText());
-    	txtMensajeGrupal.clear();
+    	if (!txtMensajeGrupal.getText().equals("")) {
+    		listaMensajesGrupales.add(txtUsuarioGrupal.getText() + obtenerHora() + ": " + txtMensajeGrupal.getText());
+    		lvChatGrupal.setItems(listaMensajesGrupales);
+            txtMensajeGrupal.clear();
+        } else {
+        	alertaMensajeVacio();
+        }
     }
     
     String obtenerHora() {
@@ -168,9 +174,9 @@ public class pantallaController {
     	crearChatsPrivados();
 		txtUsuarioGrupal.setText(txtIngresarUsuario.getText());
 		txtUsuarioPrivado.setText(txtIngresarUsuario.getText());
-    	tabBienvenida.setDisable(true);
-    	tabChatPrivado.setDisable(false);
-    	tabChatGrupal.setDisable(false);    
+//    	tabBienvenida.setDisable(true);
+//    	tabChatPrivado.setDisable(false);
+//    	tabChatGrupal.setDisable(false);    
     }
 
     void crearChatsPrivados() {
@@ -254,8 +260,8 @@ public class pantallaController {
         assert txtUsuarioGrupal != null : "fx:id=\"txtUsuarioGrupal\" was not injected: check your FXML file 'pantalla.fxml'.";
         assert txtUsuarioPrivado != null : "fx:id=\"txtUsuarioPrivado\" was not injected: check your FXML file 'pantalla.fxml'.";
         
-        tabChatGrupal.setDisable(true);
-        tabChatPrivado.setDisable(true);
+//        tabChatGrupal.setDisable(true);
+//        tabChatPrivado.setDisable(true);
         lvChatGrupal.setItems(listaMensajesGrupales);
     }
 

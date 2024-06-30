@@ -70,7 +70,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="56.0" layoutY="403.0" text="Mensaje" textFill="WHITE">
+                        <Label layoutX="56.0" layoutY="404.0" text="Mensaje" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="21.0" />
                            </font>
@@ -115,7 +115,7 @@
                   </AnchorPane>
             </content>
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="59.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@privado.png" />
                      </image>
@@ -168,7 +168,7 @@
                   </AnchorPane>
                </content>
                <graphic>
-                  <ImageView fitHeight="51.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="59.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@grupo.png" />
                      </image>

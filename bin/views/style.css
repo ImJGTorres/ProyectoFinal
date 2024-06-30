@@ -66,8 +66,8 @@
 
 #tabPanePrincipal {
 	-fx-background-color: #171717;
-    -fx-tab-min-height: 4em;
-    -fx-tab-max-height: 4em;
+    -fx-tab-min-height: 5em;
+    -fx-tab-max-height: 5em;
     -fx-tab-min-width: 6em;
     -fx-tab-max-width: 6em;
 }
@@ -78,12 +78,12 @@
 }
 
 .tabP {
-	-fx-background-color: #303030;
+	-fx-background-color: #454545;
 	-fx-background-insets: 0.0;
 	-fx-background-radius: 0.0;
 	-fx-padding:0 20 0 20;
-	-fx-border-width: 5 0 0 0;
-	-fx-border-color: #303030;
+	-fx-border-width: 0 0 0 0;
+	-fx-border-color: #454545;
 }
 
 #tabChatGrupal {
@@ -91,10 +91,10 @@
 }
 
 .tabP:selected {
-	-fx-background-color: #656565;
+	-fx-background-color: #858585;
 	-fx-background-radius: 0;
 	-fx-background-insets: 0;
-	-fx-border-width: 5 0 0 0;
+	-fx-border-width: 0 0 0 0;
 	-fx-border-color: #ffffff;
 }
 
@@ -102,8 +102,6 @@
 	-fx-background-insets: 0, 0 0 10;
 	-fx-padding: 0.0em 0.0em 0.0em 0.0em;
 }
-
-
 
 
 .txt {
@@ -133,6 +131,32 @@
     -fx-effect: dropshadow(three-pass-box, rgb(100, 100, 100), 15, 0.8, 0, 0); 
 }
 
-.tabla {
-    -fx-background-color: rgb(41,41,41);
+.list.view {
+	-fx-background-radius: 0;
+	-fx-background-insets: 0;
+}
+
+.list-view .list-cell {
+    -fx-font-family: "Arial"; 
+    -fx-font-size: 12pt;   
+    -fx-font-weight: 500;
+	-fx-background-color: #f1f1f1;
+	-fx-background-margin: 5px;
+	-fx-border-color: gray;   
+    -fx-border-width: 0.1px;  
+    -fx-border-style: solid; 
+    -fx-padding: 4px; 
+}
+
+.list-view .list-cell:hover {
+    -fx-font-weight: 700;
+	-fx-background-color: #ddd;
+}
+
+.list-view .list-cell:selected {
+    -fx-font-weight: 700;
+	-fx-background-color: #aaa;
+	-fx-font-color: #000;
+	-fx-background-radius: 0;
+	-fx-background-insets: 0;
 }
