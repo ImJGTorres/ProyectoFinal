@@ -27,16 +27,16 @@
 }
 
 .tab {
-	-fx-background-color: #303030;
+	-fx-background-color: #404040;
 	-fx-background-insets: 0.0;
 	-fx-background-radius: 0.0;
 	-fx-padding:0 5 0 5;
 	-fx-border-width: 5 0 0 0;
-	-fx-border-color: #303030;
+	-fx-border-color: #404040;
 }
 
 .tab:selected {
-	-fx-background-color: #656565;
+	-fx-background-color: #606060;
 	-fx-background-radius: 0;
 	-fx-background-insets: 0;
 	-fx-border-width: 5 0 0 0;
@@ -75,6 +75,7 @@
 .tabP .tab-label {
 	-fx-background-color: transparent;
 	-fx-alignment: center;
+	
 }
 
 .tabP {
@@ -88,6 +89,10 @@
 
 #tabChatGrupal {
 	-fx-background-radius: 0 0 7 0;
+}
+
+.tabP:hover {
+	-fx-background-color: #656565;
 }
 
 .tabP:selected {

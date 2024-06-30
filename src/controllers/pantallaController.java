@@ -106,6 +106,7 @@ public class pantallaController {
     	tabPaneChats.getTabs().clear();
         mensajesPrivadosPorTab.clear();
     }
+    
     @FXML
     void enviarMensajeGrupal(ActionEvent event) {
     	if (!txtMensajeGrupal.getText().equals("")) {
@@ -115,9 +116,13 @@ public class pantallaController {
         } else {
         	alertaMensajeVacio();
         }
-    }
+    } 
     
-    String obtenerHora() {
+    public ObservableList<String> getListaMensajesGrupales() {
+		return listaMensajesGrupales;
+	}
+
+	String obtenerHora() {
     	Calendar c = Calendar.getInstance();
     	int hora = c.get(Calendar.HOUR_OF_DAY);
     	int minuto = c.get(Calendar.MINUTE);
@@ -146,8 +151,7 @@ public class pantallaController {
             txtMensajePrivado.clear();
         } else {
         	alertaMensajeVacio();
-        }
-        
+        }      
     }
     
     @FXML
@@ -193,6 +197,7 @@ public class pantallaController {
         label.getStyleClass().add("tab-label"); 
         label.setWrapText(true);
         label.setTextAlignment(TextAlignment.CENTER);
+        label.setStyle("-fx-font-weight: 700");
         nueva.setGraphic(label);
     	AnchorPane contenido = new AnchorPane();
     	ListView<String> lv = new ListView<>();

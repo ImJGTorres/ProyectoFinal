@@ -1,5 +1,8 @@
 package views;
 
+import java.util.Scanner;
+
+import controllers.pantallaController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,10 +29,12 @@ public class Main extends Application {
             primaryStage.setTitle("Bienvenido");
             primaryStage.setScene(scene);
             primaryStage.show();
+//            pantallaController pantalla = new pantallaController(); 		
+//    		while(primaryStage != null) {
+//    			System.out.println(pantalla.getListaMensajesGrupales());
+//    		}        
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }	
 	}
-	
-	
 }
