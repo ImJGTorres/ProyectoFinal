@@ -26,7 +26,7 @@ public class Main extends Application {
             // Crear la escena con el contenido cargado
             Scene scene = new Scene(root);
             // Configurar el escenario (stage)
-            primaryStage.setTitle("Bienvenido");
+            primaryStage.setTitle("BorisPonganos5:D");
             primaryStage.setScene(scene);
             primaryStage.show();
 //            pantallaController pantalla = new pantallaController(); 		

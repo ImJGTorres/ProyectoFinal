@@ -3,6 +3,7 @@ package controllers;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -121,11 +122,20 @@ public class pantallaController {
     public ObservableList<String> getListaMensajesGrupales() {
 		return listaMensajesGrupales;
 	}
+    
+    public void imprimirPublico(String mensaje) {
+    	  listaMensajesGrupales.add(mensaje);
+          lvChatGrupal.setItems(listaMensajesGrupales); 
+    }
 
 	String obtenerHora() {
     	Calendar c = Calendar.getInstance();
     	int hora = c.get(Calendar.HOUR_OF_DAY);
     	int minuto = c.get(Calendar.MINUTE);
+//    	int dia = c.get(Calendar.DAY_OF_MONTH);
+//    	int mes = c.get(Calendar.MONTH)+1;
+//    	int anio = c.get(Calendar.YEAR);
+//    	Date d = new java.util.Date(anio, mes, dia, hora, minuto);
     	String fechaHora = "(" + hora + ":" + minuto + ")";
     	return fechaHora;
     }
@@ -134,15 +144,14 @@ public class pantallaController {
     void enviarMensajePrivado(ActionEvent event) {
     	Tab tabActual = tabPaneChats.getSelectionModel().getSelectedItem(); 
     	AnchorPane panel = (AnchorPane)tabActual.getContent();
-    	
+    	String nombre = tabActual.getId(); //el nombre de la pestaña
     	ListView<String> chatPrivado = null;
         for (javafx.scene.Node node : panel.getChildren()) {
             if (node instanceof ListView) {
                 chatPrivado = (ListView<String>) node;
                 break;
             }
-        }
-        
+        }   
         //obtener mensajes para esa pestaña
         ObservableList<String> listaMensajesPrivados = mensajesPrivadosPorTab.get(tabActual);
         if (!txtMensajePrivado.getText().equals("")) {
@@ -152,6 +161,26 @@ public class pantallaController {
         } else {
         	alertaMensajeVacio();
         }      
+    }
+    
+    public void imprimirPrivado(String usuario, String mensaje) {
+    	Tab tabABuscar = null;    	
+    	for (Tab t: tabPaneChats.getTabs()) {
+    		if (t.getId().equals(usuario)) {
+    			AnchorPane panel = (AnchorPane)t.getContent();
+    	    	ListView<String> chatPrivado = null;
+    	        for (javafx.scene.Node node : panel.getChildren()) {
+    	            if (node instanceof ListView) {
+    	                chatPrivado = (ListView<String>) node;
+    	                break;
+    	            }
+    	        }
+    	        ObservableList<String> listaMensajesPrivados = mensajesPrivadosPorTab.get(t);
+    	        listaMensajesPrivados.add(mensaje);
+                chatPrivado.setItems(listaMensajesPrivados); 
+            	break;
+            }
+    	}
     }
     
     @FXML
@@ -191,7 +220,7 @@ public class pantallaController {
     	}
     }
     
-    void agregarChats(String usuario) {
+    public void agregarChats(String usuario) {
     	Tab nueva = new Tab();
     	Label label = new Label("Chat con " + usuario);
         label.getStyleClass().add("tab-label"); 
@@ -201,7 +230,7 @@ public class pantallaController {
         nueva.setGraphic(label);
     	AnchorPane contenido = new AnchorPane();
     	ListView<String> lv = new ListView<>();
-    	lv.setId(usuario);
+    	nueva.setId(usuario);
     	lv.setPrefSize(535, 327);
     	contenido.getChildren().add(lv);
     	nueva.setContent(contenido);
@@ -209,6 +238,19 @@ public class pantallaController {
     
         ObservableList<String> listaMensajesPrivados = FXCollections.observableArrayList();
         mensajesPrivadosPorTab.put(nueva, listaMensajesPrivados);
+    }
+    
+    public void eliminarChat(String usuario) {
+    	Tab tabAEliminar = null;
+    	
+    	for (Tab t: tabPaneChats.getTabs()) {
+    		if (t.getId().equals(usuario)) {
+    			tabAEliminar = t;
+            	break;
+    		}
+    	}
+        this.tabPaneChats.getTabs().remove(tabAEliminar);
+        mensajesPrivadosPorTab.remove(tabAEliminar);
     }
     
     boolean añadirUsuario(String usuario) {
